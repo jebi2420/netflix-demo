@@ -13,7 +13,7 @@ const AppLayout = () => {
 
   return (
     <div>
-        <Navbar variant="primary" expand="lg" className="bg-body-tertiary">
+        <Navbar data-bs-theme="dark" variant="primary" expand="lg" className="bg-body-tertiary">
           <Container fluid>
             <Navbar.Brand href="#">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" 
