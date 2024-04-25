@@ -6,29 +6,6 @@
     color: white;
 }
 
-.navbar-primary a:hover{
-    color: white;
-}
-
-.navbar-primary a:active{
-    color: white;
-}
-
-
-
-/* .nav-link.active{
-    color: red !important;
-} */
-
-.input-search{
-    border: 1px solid rgb(151, 151, 151);
-    background-color: rgb(71, 71, 71);
-}
-
-.input-search::placeholder{
-    color: white;
-}
-
 .btn-search{
     border: 1px solid red;
     color: red;
