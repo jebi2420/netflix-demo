@@ -1,0 +1,26 @@
+.navbar-primary{
+    background-color: black !important;
+}
+
+.navbar-primary a, span {
+    color: white;
+}
+
+.input-search{
+    border: 1px solid rgb(151, 151, 151);
+    background-color: rgb(71, 71, 71);
+}
+
+.input-search::placeholder{
+    color: white;
+}
+
+.btn-search{
+    border: 1px solid red;
+    color: red;
+}
+
+.btn-search:hover{
+    background-color: red;
+    color: white;
+}

@@ -5,11 +5,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Outlet } from 'react-router-dom';
+import './AppLayout.css';
 
 const AppLayout = () => {
+
   return (
     <div>
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar variant="primary" expand="lg" className="bg-body-tertiary">
           <Container fluid>
             <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,14 +24,14 @@ const AppLayout = () => {
                 <Nav.Link href="#action1">Home</Nav.Link>
                 <Nav.Link href="#action2">Link</Nav.Link>
               </Nav>
-              <Form className="d-flex">
+              <Form className="d-flex" >
                 <Form.Control
                   type="search"
                   placeholder="Search"
-                  className="me-2"
+                  className="input-search me-2"
                   aria-label="Search"
                 />
-                <Button variant="outline-success">Search</Button>
+                <Button variant="search outline-success">Search</Button>
               </Form>
             </Navbar.Collapse>
           </Container>
