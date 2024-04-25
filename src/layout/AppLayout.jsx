@@ -15,8 +15,9 @@ const AppLayout = () => {
     <div>
         <Navbar data-bs-theme="dark" variant="primary" expand="lg" className="bg-body-tertiary">
           <Container fluid>
-            <Navbar.Brand href="#">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" 
+            <Navbar.Brand onClick={()=>{ navigate('/'); }}>
+                <img                     
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" 
                     alt="" 
                     style={{ width: '8rem' }}
                 />
