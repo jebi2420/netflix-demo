@@ -4,6 +4,7 @@ import AppLayout from './layout/AppLayout';
 import Homepage from './pages/Homepage/Homepage';
 import MovieDetail from './pages/MovieDetail/MovieDetail';
 import Movies from './pages/Movies/Movies';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 // 홈페이지 / 
 // 영화 전체 보여주는 페이지 (+ 서치) /movies
@@ -18,6 +19,8 @@ function App() {
           <Route path=":id" element={<MovieDetail />}/>
         </Route>
       </Route>
+
+      <Route path="*" element={<NotFoundPage />}></Route>
     </Routes>
   );
 }
