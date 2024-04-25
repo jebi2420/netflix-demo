@@ -15,7 +15,12 @@ const AppLayout = () => {
     <div>
         <Navbar variant="primary" expand="lg" className="bg-body-tertiary">
           <Container fluid>
-            <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+            <Navbar.Brand href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" 
+                    alt="" 
+                    style={{ width: '8rem' }}
+                />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -23,8 +28,8 @@ const AppLayout = () => {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <Nav.Link onClick={()=>{ navigate('/');}} href="#action1" >Home</Nav.Link>
-                <Nav.Link onClick={()=>{ navigate('/Movies');}} href="#action2">Movies</Nav.Link>
+                <Nav.Link onClick={()=>{ navigate('/'); }}>Home</Nav.Link>
+                <Nav.Link onClick={()=>{ navigate('/Movies'); }}>Movies</Nav.Link>
               </Nav>
               <Form className="d-flex" >
                 <Form.Control
