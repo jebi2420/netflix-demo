@@ -1,4 +1,5 @@
 import React from 'react'
+import Banner from './Banner/Banner'
 
 // 1. 배너 => popular 영화를 들고와서 첫번째 아이템을 보여주자
 // 2. popular movie
@@ -8,7 +9,7 @@ import React from 'react'
 const Homepage = () => {
   return (
     <div>
-      Homepage
+      <Banner />
     </div>
   )
 }
