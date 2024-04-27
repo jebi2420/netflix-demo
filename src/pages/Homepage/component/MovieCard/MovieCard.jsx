@@ -1,5 +1,6 @@
 import React from 'react'
 import { Badge } from 'react-bootstrap'
+import './MovieCard.css'
 
 const MovieCard = ({movie}) => {
   return (
@@ -7,7 +8,8 @@ const MovieCard = ({movie}) => {
       style={{
         backgroundImage: 
           "url("+`https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`+")"
-      }}  
+      }} 
+      className='movie-card' 
     >
       <h1>{movie.title}</h1>
       {movie.genre_ids.map((id) => 
