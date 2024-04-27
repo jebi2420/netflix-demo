@@ -1,5 +1,7 @@
 import React from 'react'
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
+import { Alert } from 'bootstrap';
+import Carousel from 'react-multi-carousel';
 
 const responsive = {
     desktop: {
