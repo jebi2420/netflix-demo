@@ -16,9 +16,9 @@ const MovieCard = ({movie}) => {
         {movie.genre_ids.map((id) =>
           (<Badge bg="danger">{id}</Badge>
         ))}
-        <div>
-          <div>{movie.vote_average}</div>
-          <div>{movie.popularity}</div>
+        <div className="card-info-box">
+          <div>{movie.vote_average.toFixed(1)}</div>
+          <div>{Math.trunc(movie.popularity)}</div>
           <div>{movie.adult?'over18':'under18'}</div>
         </div>
       </div>
