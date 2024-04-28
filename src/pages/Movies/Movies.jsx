@@ -9,6 +9,10 @@ import { Alert } from 'bootstrap';
 // 1. navbar에서 클릭해서 온 경우 => popularMovie 보여주기
 // 2. keyword를 입력해서 온 경우 => keyword와 관련된 영화들을 보여줌
 
+// 페이지네이션 설치
+// page state 만들기
+// 페이지네이션 클릭할때마다 page 바꿔주기
+// page 값이 바뀔때마다 useSearchMovie에 page까지 넣어서 fetch
 
 const Movies = () => {
   const [query, setQuery] = useSearchParams();
