@@ -13,8 +13,14 @@
     opacity: 0;
     transition: all 1s;
     color: white;
+    font-size: 0.8rem;
     font-weight: bold;
     overflow-wrap: break-word;
+    padding: 2rem 1rem;
+}
+
+.overlay h1 {
+    font-size: 1.5rem;
 }
 
 .overlay:hover{
@@ -24,4 +30,13 @@
 .movie-card:hover{
     transform: scale(1.3) translateZ(20px);
     z-index: 2;
+}
+
+.badge{
+    margin-right: 3px;
+    margin-bottom: 10px;
+}
+
+.card-info-box{
+
 }
