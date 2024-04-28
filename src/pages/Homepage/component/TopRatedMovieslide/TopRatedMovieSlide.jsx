@@ -1,9 +1,9 @@
 import React from 'react'
-import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import { Alert } from 'bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import MovieCard from '../MovieCard/MovieCard';
+import { useTopRatedMoviesQuery } from '../../../../hooks/topRatedMovies';
 import './TopRatedMovieSlide.css';
 
 const responsive = {
@@ -23,7 +23,8 @@ const responsive = {
 
 const TopRatedMovieSlide = () => {
 
-    const { data, isLoading, isError, error} = usePopularMoviesQuery();  
+    const { data, isLoading, isError, error} = useTopRatedMoviesQuery();  
+    console.log("topdata : ", data)
 
     if(isLoading){
         return <h1>Loading...</h1>
@@ -34,7 +35,7 @@ const TopRatedMovieSlide = () => {
 
   return (
     <div>
-      <h3>Popular Movies</h3>
+      <h3>Top Rated Movies</h3>
       <Carousel
         infinite={true} // 무한반복 여부
         centerMode={true} // 가운데 놓을거냐
