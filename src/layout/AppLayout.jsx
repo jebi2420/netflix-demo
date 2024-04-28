@@ -6,10 +6,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Outlet, useNavigate } from 'react-router-dom';
 import './AppLayout.css';
+import { useState } from 'react';
 
 const AppLayout = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [keyword, setKeyword] = useState("");
+
+  const searchByKeyword = (event) => {
+    event.preventDefault()
+    // url을 바꿔주기 (키워드로 서치된 Movies 페이지로 이동하는 것이기에)
+    navigate(`/movies?q=${keyword}`);
+  }
 
   return (
     <div>
@@ -32,14 +40,16 @@ const AppLayout = () => {
                 <Nav.Link onClick={()=>{ navigate('/'); }}>Home</Nav.Link>
                 <Nav.Link onClick={()=>{ navigate('/Movies'); }}>Movies</Nav.Link>
               </Nav>
-              <Form className="d-flex" >
+              <Form className="d-flex" onSubmit={searchByKeyword}>
                 <Form.Control
                   type="search"
                   placeholder="Search"
                   className="input-search me-2"
                   aria-label="Search"
+                  value={keyword}
+                  onChange={(event)=> setKeyword(event.target.value)}
                 />
-                <Button variant="search outline-success">Search</Button>
+                <Button variant="search outline-success" type="submit">Search</Button>
               </Form>
             </Navbar.Collapse>
           </Container>
