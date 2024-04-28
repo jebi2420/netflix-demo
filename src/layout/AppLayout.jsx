@@ -17,6 +17,7 @@ const AppLayout = () => {
     event.preventDefault()
     // url을 바꿔주기 (키워드로 서치된 Movies 페이지로 이동하는 것이기에)
     navigate(`/movies?q=${keyword}`);
+    setKeyword("");
   }
 
   return (
