@@ -19,6 +19,8 @@ const MovieCard = ({movie}) => {
     return genreNameList;
   }
 
+  console.log(movie)
+
   const goToDetail = (id) => {
     navigate(`movies/${id}`)
   }
@@ -38,7 +40,7 @@ const MovieCard = ({movie}) => {
         ))}
         <div className="card-info-box">
           <div>{movie.vote_average.toFixed(1)}</div>
-          <div>{Math.trunc(movie.popularity)}</div>
+          <div>{movie.popularity}</div>
           <div>{movie.adult?'over18':'under18'}</div>
         </div>
       </div>
