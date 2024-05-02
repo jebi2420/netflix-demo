@@ -15,3 +15,6 @@
     background-color: red;
     color: white;
 }
+.navbar-brand{
+    cursor: pointer;
+}
