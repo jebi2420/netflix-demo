@@ -2,7 +2,6 @@
 
 .movie-info{
     display: flex;
-    justify-content: center;
     padding: 4em 3em;
     color: white;
     background-repeat: no-repeat;
@@ -11,15 +10,13 @@
 }
 
 .movie-poster{
+    min-width: 300px;
+    width: 300px;
+    height: 450px;
     position: relative;
-    width: 500px;
     margin-right: 3em;
     border-radius: 5px;
-    overflow: hidden;
-}
-
-.badge{
-    font-size: 1em;
+    border: 0.5px solid rgba(182, 182, 182, 0.356);
 }
 
 .adult-icon{
@@ -61,7 +58,12 @@
 }
 
 .sub-fact{
-    padding: 20px;
-    background-color: gray;
+    margin-right: 1em;
+    padding: 1.5em 2em;
+    background-color: rgba(78, 78, 78, 0.678);
     border-radius: 10px;
+}
+
+.sub-fact h5{
+    font-weight: 600;
 }
