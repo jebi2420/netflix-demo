@@ -30,7 +30,6 @@ const MovieDetail = () => {
     return num.toLocaleString('ko-KR');
   }
   
-
   if(isLoading){
     return (
       <h1>Loading...</h1>
@@ -41,36 +40,40 @@ const MovieDetail = () => {
       <Alert variant='danger'>{error.message}</Alert>
     )
   }
-  // 영화 포스터
-  // 영화 제목
-  // 장르
-  // 영화 인기도
-  // 영화 줄거리
-  // 예산
-  // 개봉일
+
   return (
     <div>
-      <div className='movie-info'>
-        <div>
+      <div 
+        className='movie-info'
+        style={{
+          backgroundImage:
+          `linear-gradient(to left, rgba(0 0 0 / 20%), rgba(0, 0, 0, 1)), 
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.45)75%, rgba(0, 0, 0, 1)95%),
+            url(https://media.themoviedb.org/t/p/w600_and_h900_bestv2${data.backdrop_path})` 
+      }} 
+      >
+        <div className='movie-poster'>
           <img 
             style={{
-              width: "300px"
+              width: "100%"
             }}
             src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${data.poster_path}`} 
             alt="" 
-            className='movie-poster'
           />
         </div>
-        <h1>{data.title}</h1>
-        {showGenre(data.genres).map((id) =>
-          (<Badge bg="danger">{id}</Badge>
-        ))}
-        <div>popularity: {data.popularity}</div> 
-        <div>{data.vote_average.toFixed(1)}</div>
-        <div>runtime: {data.runtime} min</div>
-        <div>release date:{data.release_date}</div>
-        <div>revenue: {formatNumber(data.revenue)}</div>  
-        <div>{data.overview}</div>
+        <div className="movie-caps">
+          <h1>{data.title}</h1>
+          {showGenre(data.genres).map((id) =>
+            (<Badge bg="danger">{id}</Badge>
+          ))}
+          <div>{data.adult?'over18':'under18'}</div>
+          <div>popularity: {data.popularity}</div>
+          <div>{data.vote_average.toFixed(1)}</div>
+          <div>runtime: {data.runtime} min</div>
+          <div>release date:{data.release_date}</div>
+          <div>revenue: {formatNumber(data.revenue)}</div>
+          <div>{data.overview}</div>
+        </div>
       </div>
     </div>
   )

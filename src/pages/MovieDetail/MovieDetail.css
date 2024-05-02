@@ -3,5 +3,15 @@
 }
 
 .movie-info{
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    padding: 4em 3em;
+    background-repeat: no-repeat;
+    background-position: left calc((50vw - 170px) - 340px) top;
+    background-size: cover;
+}
+
+.movie-poster{
+    width: 500px;
+    margin-right: 3em;
 }
