@@ -5,7 +5,8 @@ import { Alert } from 'bootstrap';
 import { Badge } from 'react-bootstrap'
 import './MovieDetail.css'
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar, faFire } from '@fortawesome/free-solid-svg-icons';
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
@@ -62,17 +63,37 @@ const MovieDetail = () => {
           />
         </div>
         <div className="movie-caps">
-          <h1>{data.title}</h1>
-          {showGenre(data.genres).map((id) =>
-            (<Badge bg="danger">{id}</Badge>
-          ))}
-          <div>{data.adult?'over18':'under18'}</div>
-          <div>popularity: {data.popularity}</div>
-          <div>{data.vote_average.toFixed(1)}</div>
-          <div>runtime: {data.runtime} min</div>
-          <div>release date:{data.release_date}</div>
-          <div>revenue: {formatNumber(data.revenue)}</div>
-          <div>{data.overview}</div>
+          <div className="top-facts">
+            <h1>{data.title}</h1>
+            <div className="main-facts">
+              <div>{data.adult?<div className='adult-icon'>19</div>:<div className='adult-icon all-icon'>all</div>}</div>
+              <div className="dot"></div>
+              <div>{data.release_date}</div>
+              <div className="dot"></div>
+              <div>{data.runtime} min</div>
+            </div>
+          </div>
+          <div className="genres">
+            <h3>Genre</h3>
+            {showGenre(data.genres).map((id) =>
+              (<Badge bg="danger">{id}</Badge>
+            ))}
+          </div>
+          <div>
+            <h3>Overview</h3>
+            {data.overview}
+          </div>
+          <div className="score">
+            <h3>Score</h3>
+            <div className="sub-facts">
+              <div className='sub-fact'>
+                <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B"}} />
+                {data.vote_average.toFixed(1)}
+              </div>
+              <div className='sub-fact'><FontAwesomeIcon icon={faFire} style={{color: "#d72e14",}} />{data.popularity}</div>
+              <div className='sub-fact'>${formatNumber(data.revenue)}</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
