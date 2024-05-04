@@ -7,13 +7,20 @@ import './MovieDetail.css'
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faFire } from '@fortawesome/free-solid-svg-icons';
+import { useReviewsQuery } from '../../hooks/useReviews';
+import { Col } from 'react-bootstrap';
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
-  console.log("movieId:", `${movieId}`)
-  const { data, isLoading, isError, error} = useDetailMovieQuery({movieId});
-  console.log("detail:", data)
+  const { data, isLoading, isError, error } = useDetailMovieQuery({movieId});
+  const { 
+    data:reviewData, 
+    isLoading: isReviewsLoading, 
+    isError:isReviewsError, 
+    error:reviewError 
+  } = useReviewsQuery({movieId});
 
+  console.log('review: ', reviewData)
 
   const {data:genreData} = useMovieGenreQuery();
   const showGenre = (genres) => {
@@ -100,6 +107,18 @@ const MovieDetail = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div>
+        <h1>Reviews</h1>
+        <div>
+          {reviewData?.results.map((result, index)=> (
+            <div key={index}>
+              fdd
+              <div review={result}></div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
