@@ -11,7 +11,6 @@ import { useReviewsQuery } from '../../hooks/useReviews';
 import { Row, Col } from 'react-bootstrap';
 import MovieReviews from './MovieReviews/MovieReviews';
 import { useMovieRecommendationQuery } from '../../hooks/useMovieRecommendation';
-import MovieRecommendation from './MovieRecommendation/MovieRecommendation';
 import MovieCard from '../../common/MovieCard/MovieCard';
 
 const MovieDetail = () => {
