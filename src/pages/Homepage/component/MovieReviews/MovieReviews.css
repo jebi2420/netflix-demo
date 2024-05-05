@@ -50,10 +50,10 @@
 
 .movie-content-area{
     position: relative;
-    height: 200px;
-    overflow: hidden;
+    /* height: 200px;
+    overflow: hidden; */
     line-height: 24px;
-    margin: 16px 0;
+    margin-top: 16px;
 }
 
 .movie-content{
@@ -63,4 +63,16 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 7; /* 표시할 줄 수 */
+}
+
+.read-more-btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    color: #c94646;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: 18px;
 }
