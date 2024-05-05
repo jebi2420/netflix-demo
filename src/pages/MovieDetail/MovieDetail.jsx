@@ -151,9 +151,9 @@ const MovieDetail = () => {
               <div className="gradient-overlay"></div>
               <div className="reco-movie-scroller">
                 {recoData?.results?.map((movie, index)=> (
-                      <Row lg={2} xs={1}>
+                      <div className='reco-movie-card'>
                         <MovieCard movie={movie} key={index}></MovieCard>
-                      </Row>
+                      </div>
                 ))}
               </div>
             </div>

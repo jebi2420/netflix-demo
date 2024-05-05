@@ -85,9 +85,12 @@
 
 .reco-movie-scroller{
     position: relative;
+    height: 440px;
     display: flex;
-    overflow: hidden;
+    overflow: visible;
     overflow-x: auto;
+    align-items: center;
+    padding-left: 36px;
 }
 
 .gradient-overlay{
@@ -97,4 +100,8 @@
     height: 95%;
     background: linear-gradient(to left, rgb(0, 0, 0) 5%, #000000 10%, transparent 100%);
     z-index: 2;
+}
+
+.reco-movie-card{
+    margin-right: 15px;
 }
