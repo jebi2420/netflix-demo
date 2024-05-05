@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faFire } from '@fortawesome/free-solid-svg-icons';
 import { useReviewsQuery } from '../../hooks/useReviews';
 import { Col } from 'react-bootstrap';
+import MovieReviews from '../Homepage/component/MovieReviews/MovieReviews';
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
@@ -114,10 +115,7 @@ const MovieDetail = () => {
         <h1>Reviews</h1>
         <div>
           {reviewData?.results.map((result, index)=> (
-            <div key={index}>
-              fdd
-              <div review={result}></div>
-            </div>
+              <MovieReviews result={result} key={index}></MovieReviews>
           ))}
         </div>
       </div>
