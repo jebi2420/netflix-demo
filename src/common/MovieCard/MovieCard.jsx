@@ -23,7 +23,15 @@ const MovieCard = ({movie}) => {
   console.log(movie)
 
   const goToDetail = (id) => {
-    navigate(`movies/${id}`)
+    // 현재 경로 확인
+    const currentPath = window.location.pathname;
+    //목표 경로 생성
+    const targetPath = `/movies/${id}`;
+
+    // 현재 경로와 목표 경로가 다를 경우에만 navigate 실행
+    if(currentPath !== targetPath){
+      navigate(targetPath);
+    }
   }
 
   return (
