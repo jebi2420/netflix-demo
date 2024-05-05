@@ -12,6 +12,7 @@ import { Row, Col } from 'react-bootstrap';
 import MovieReviews from './MovieReviews/MovieReviews';
 import { useMovieRecommendationQuery } from '../../hooks/useMovieRecommendation';
 import MovieCard from '../../common/MovieCard/MovieCard';
+import { useState } from 'react';
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
@@ -46,6 +47,20 @@ const MovieDetail = () => {
   function formatNumber(num) {
     return num.toLocaleString('ko-KR');
   }
+
+  const [visibleItems, setVisibleItems] = useState(12);
+
+  const [isExpanded, setIsExpanded] = useState(false);
+  const toggleExpand = () => {
+    if(isExpanded){
+      setIsExpanded(false);
+      setVisibleItems(12)
+    }else {
+      setIsExpanded(true);
+      setVisibleItems(recoData.results.length)
+    }
+
+  };
   
   if(isLoading){
     return (
@@ -123,7 +138,7 @@ const MovieDetail = () => {
         <h1 className='section-title'>Reviews</h1>
         <Row>
           {reviewData?.results?.map((result, index)=> (
-              <Col className='movie-card' lg={2} xs={12}>
+              <Col lg={3} xs={12}>
                 <MovieReviews result={result} key={index}></MovieReviews>
               </Col>
           ))}
@@ -133,11 +148,12 @@ const MovieDetail = () => {
       <div className='sub-area'>
         <h1 className='section-title'>Recommendation</h1>
           <Row>
-            {recoData?.results.map((movie, index)=> (
+            {recoData?.results?.slice(0, visibleItems).map((movie, index)=> (
                 <Col lg={2} xs={12}>
                   <MovieCard movie={movie} key={index}></MovieCard>
                 </Col>
             ))}
+            <button className='movie-more-btn' onClick={toggleExpand}>{isExpanded ? 'less' : 'read more'}</button>
           </Row> 
       </div>
     </div>

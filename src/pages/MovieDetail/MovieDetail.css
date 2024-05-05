@@ -3,12 +3,12 @@
 }
 
 .sub-area{
-    padding: 1em 3em;
+    padding: 1em 5em;
 }
 
 .movie-info{
     display: flex;
-    padding: 4em 3em;
+    padding: 4em 5em;
     color: white;
     background-repeat: no-repeat;
     background-position: left calc((50vw - 170px) - 340px) top;
