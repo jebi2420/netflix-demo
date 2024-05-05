@@ -11,10 +11,8 @@ import { useReviewsQuery } from '../../hooks/useReviews';
 import { Row, Col } from 'react-bootstrap';
 import MovieReviews from './MovieReviews/MovieReviews';
 import { useMovieRecommendationQuery } from '../../hooks/useMovieRecommendation';
-import MovieSlider from '../../common/MovieSlider/MovieSlider';
-import { responsive } from '../../constants/responsive';
 import MovieRecommendation from './MovieRecommendation/MovieRecommendation';
-
+import MovieCard from '../../common/MovieCard/MovieCard';
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
@@ -136,11 +134,11 @@ const MovieDetail = () => {
       <div className='sub-area'>
         <h1 className='section-title'>Recommendation</h1>
           <Row>
-            {/* {recoData?.results.map((result, index)=> (
+            {recoData.results?.map((movie, index)=> (
                 <Col lg={2} xs={12}>
-                  <MovieCard result={result} key={index}></MovieCard>
+                  <MovieCard movie={movie} key={index}></MovieCard>
                 </Col>
-            ))} */}
+            ))}
           </Row> 
       </div>
     </div>
