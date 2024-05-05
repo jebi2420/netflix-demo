@@ -1,4 +1,6 @@
-
+.section-title{
+    margin-bottom: 20px;
+}
 
 .movie-info{
     display: flex;
@@ -16,7 +18,7 @@
     position: relative;
     margin-right: 3em;
     border-radius: 5px;
-    border: 0.5px solid rgba(182, 182, 182, 0.356);
+    border: 0.8px solid rgba(182, 182, 182, 0.356);
 }
 
 .adult-icon{
@@ -66,4 +68,8 @@
 
 .sub-fact h5{
     font-weight: 600;
+}
+
+.reviews-area{
+    padding: 4em 3em;
 }

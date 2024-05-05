@@ -8,7 +8,7 @@ import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faFire } from '@fortawesome/free-solid-svg-icons';
 import { useReviewsQuery } from '../../hooks/useReviews';
-import { Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import MovieReviews from '../Homepage/component/MovieReviews/MovieReviews';
 
 const MovieDetail = () => {
@@ -111,13 +111,15 @@ const MovieDetail = () => {
         </div>
       </div>
 
-      <div>
-        <h1>Reviews</h1>
-        <div>
+      <div className='reviews-area'>
+        <h1 className='section-title'>Reviews</h1>
+        <Row>
           {reviewData?.results.map((result, index)=> (
-              <MovieReviews result={result} key={index}></MovieReviews>
+              <Col lg={3} xs={12}>
+                <MovieReviews result={result} key={index}></MovieReviews>
+              </Col>
           ))}
-        </div>
+        </Row>
       </div>
     </div>
   )
