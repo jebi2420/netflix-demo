@@ -2,6 +2,10 @@
     margin-bottom: 20px;
 }
 
+.sub-area{
+    padding: 1em 3em;
+}
+
 .movie-info{
     display: flex;
     padding: 4em 3em;
@@ -70,6 +74,3 @@
     font-weight: 600;
 }
 
-.reviews-area{
-    padding: 4em 3em;
-}

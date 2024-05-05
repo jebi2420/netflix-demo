@@ -111,7 +111,7 @@ const MovieDetail = () => {
         </div>
       </div>
 
-      <div className='reviews-area'>
+      <div className='reviews-area sub-area'>
         <h1 className='section-title'>Reviews</h1>
         <Row>
           {reviewData?.results.map((result, index)=> (
@@ -120,6 +120,10 @@ const MovieDetail = () => {
               </Col>
           ))}
         </Row>
+      </div>
+
+      <div className='sub-area'>
+        <h1 className='section-title'>Recommendation</h1>
       </div>
     </div>
   )
