@@ -147,14 +147,16 @@ const MovieDetail = () => {
 
       <div className='sub-area'>
         <h1 className='section-title'>Recommendation</h1>
-          <Row>
-            {recoData?.results?.slice(0, visibleItems).map((movie, index)=> (
-                <Col lg={2} xs={12}>
-                  <MovieCard movie={movie} key={index}></MovieCard>
-                </Col>
-            ))}
-            <button className='movie-more-btn' onClick={toggleExpand}>{isExpanded ? 'less' : 'read more'}</button>
-          </Row> 
+            <div className="reco-movie-group">
+              <div className="gradient-overlay"></div>
+              <div className="reco-movie-scroller">
+                {recoData?.results?.map((movie, index)=> (
+                      <Row lg={2} xs={1}>
+                        <MovieCard movie={movie} key={index}></MovieCard>
+                      </Row>
+                ))}
+              </div>
+            </div>
       </div>
     </div>
   )
