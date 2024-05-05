@@ -9,7 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faFire } from '@fortawesome/free-solid-svg-icons';
 import { useReviewsQuery } from '../../hooks/useReviews';
 import { Row, Col } from 'react-bootstrap';
-import MovieReviews from '../Homepage/component/MovieReviews/MovieReviews';
+import MovieReviews from './MovieReviews/MovieReviews';
+import { useMovieRecommendationQuery } from '../../hooks/useMovieRecommendation';
+import MovieSlider from '../../common/MovieSlider/MovieSlider';
+import { responsive } from '../../constants/responsive';
+import MovieRecommendation from './MovieRecommendation/MovieRecommendation';
+
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
@@ -20,8 +25,14 @@ const MovieDetail = () => {
     isError:isReviewsError, 
     error:reviewError 
   } = useReviewsQuery({movieId});
+  const {
+    data:recoData,
+    isLoading: isRecoLoading,
+    isError: isRecoError,
+    error: recoError
+  } = useMovieRecommendationQuery({movieId});
 
-  console.log('review: ', reviewData)
+  console.log('reco: ', recoData)
 
   const {data:genreData} = useMovieGenreQuery();
   const showGenre = (genres) => {
@@ -124,6 +135,13 @@ const MovieDetail = () => {
 
       <div className='sub-area'>
         <h1 className='section-title'>Recommendation</h1>
+          <Row>
+            {/* {recoData?.results.map((result, index)=> (
+                <Col lg={2} xs={12}>
+                  <MovieCard result={result} key={index}></MovieCard>
+                </Col>
+            ))} */}
+          </Row> 
       </div>
     </div>
   )
