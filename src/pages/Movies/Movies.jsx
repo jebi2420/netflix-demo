@@ -6,6 +6,8 @@ import { useSearchMovieQuery } from '../../hooks/useSearchMovie'
 import { Alert } from 'bootstrap';
 import ReactPaginate from 'react-paginate';
 import { useState } from 'react';
+import DropdownList from '../../common/DropdownList/DropdownList';
+import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 
 // Movies 페이지로 올 수 있는 2가지 경로
 // 1. navbar에서 클릭해서 온 경우 => popularMovie 보여주기
@@ -22,6 +24,16 @@ const Movies = () => {
   const keyword = query.get("q") // url에서 q값을 읽어옴
 
   const { data, isLoading, isError, error} = useSearchMovieQuery({keyword, page});
+  const {
+    data:genreData,
+    isLoading: isGenreLoading,
+    isError: isGenreError,
+    error: genreError
+  }= useMovieGenreQuery();
+
+  const genreNameList = genreData?.map(genre => genre.name);
+
+  console.log('genre:', genreNameList)
 
   const handlePageClick = ({selected}) => {
     setPage(selected + 1)
@@ -38,10 +50,27 @@ const Movies = () => {
     )
   }
 
+  const sortBy = () => {
+    
+  }
+
+  const sortByItems = [
+    { href: sortBy, text: "Popular"},
+    { href: "#", text: "Unpopular"}
+  ];
+
+  const byGenreItems = genreNameList?.map(genre => ({
+      href: "#", 
+      text: genre
+  }));
+
   return (
     <Container>
       <Row>
-        <Col lg={4} xs={12}>필터</Col>
+        <Col lg={4} xs={12}>
+          <DropdownList title={"Sort by"} items={sortByItems}></DropdownList>
+          <DropdownList title={"By genre"} items={byGenreItems}></DropdownList>
+        </Col>
         <Col lg={8} xs={12}>
           <Row>
             {data?.results.map((movie,index)=>
