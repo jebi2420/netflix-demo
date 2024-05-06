@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import MovieVideo from '../MovieVideo/MovieVideo';
 import './MovieModal.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 function MovieModal({video}) {
   const [show, setShow] = useState(false);
@@ -15,7 +17,8 @@ function MovieModal({video}) {
   return (
     <div className='modal-container'>
       <Button variant="primary" onClick={handleShow}>
-        Tralier
+        <FontAwesomeIcon icon={faPlay} style={{color: "#ffffff",}} />
+        &nbsp; Tralier
       </Button>
 
       <Modal className='modal-background' show={show} onHide={handleClose}>
