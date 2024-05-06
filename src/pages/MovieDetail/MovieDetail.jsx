@@ -13,6 +13,7 @@ import MovieReviews from './MovieReviews/MovieReviews';
 import { useMovieRecommendationQuery } from '../../hooks/useMovieRecommendation';
 import MovieCard from '../../common/MovieCard/MovieCard';
 import { useState } from 'react';
+import MovieModal from '../../common/Modal/MovieModal';
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
@@ -102,6 +103,7 @@ const MovieDetail = () => {
               <div>{data.release_date}</div>
               <div className="dot"></div>
               <div>{data.runtime} min</div>
+              <MovieModal></MovieModal>
             </div>
           </div>
           <div className="genres">

@@ -1,0 +1,17 @@
+.modal-container button{
+}
+.modal-background{
+    background-color: rgba(0, 0, 0, 0.192);
+}
+
+.modal-content{
+    background-color: black;
+}
+
+.modal-head{
+    background-color: black;
+}
+
+.btn-close{
+    --bs-btn-close-bg: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Grey_close_x.svg/1024px-Grey_close_x.svg.png)
+}
