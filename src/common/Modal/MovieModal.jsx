@@ -20,8 +20,9 @@ function MovieModal({video}) {
 
       <Modal className='modal-background' show={show} onHide={handleClose}>
         <Modal.Header className='modal-head' closeButton>
+          <Modal.Title>Tralier</Modal.Title>
         </Modal.Header>
-        <Modal.Body><MovieVideo video={video}></MovieVideo></Modal.Body>
+        <Modal.Body><MovieVideo video={video}>dd</MovieVideo></Modal.Body>
       </Modal>
     </div>
   );

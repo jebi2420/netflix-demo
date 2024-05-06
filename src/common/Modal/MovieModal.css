@@ -1,17 +1,27 @@
-.modal-container button{
-}
-.modal-background{
+.modal-dialog{
+    max-width: 1280px;
+    max-height: 720px;
+    height: 720px;
+    margin: 0;
     background-color: rgba(0, 0, 0, 0.192);
+    border: 1px solid rgb(88, 88, 88);
+    border-radius: 10px;
 }
 
 .modal-content{
+    width: 100%;
+    height: 100%;
     background-color: black;
 }
 
-.modal-head{
-    background-color: black;
+.modal-body > div{
+    height: 100%;
 }
 
 .btn-close{
     --bs-btn-close-bg: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Grey_close_x.svg/1024px-Grey_close_x.svg.png)
 }
+
+/* 
+width: 1280px;
+height: 720px; */
