@@ -14,6 +14,7 @@ import { useMovieRecommendationQuery } from '../../hooks/useMovieRecommendation'
 import MovieCard from '../../common/MovieCard/MovieCard';
 import { useState } from 'react';
 import MovieModal from '../../common/Modal/MovieModal';
+import { useMovieVideosQuery } from '../../hooks/useMovieVideos';
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
@@ -30,6 +31,12 @@ const MovieDetail = () => {
     isError: isRecoError,
     error: recoError
   } = useMovieRecommendationQuery({movieId});
+  const {
+    data:videoData,
+    isLoading: isVideoLoading,
+    isError: isVideoError,
+    error: videoError
+  } = useMovieVideosQuery({movieId});
 
   console.log('reco: ', recoData)
 
@@ -103,7 +110,7 @@ const MovieDetail = () => {
               <div>{data.release_date}</div>
               <div className="dot"></div>
               <div>{data.runtime} min</div>
-              <MovieModal></MovieModal>
+              <MovieModal video={videoData}></MovieModal>
             </div>
           </div>
           <div className="genres">
