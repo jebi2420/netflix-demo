@@ -5,7 +5,7 @@ import MovieCard from '../../common/MovieCard/MovieCard';
 import { useSearchMovieQuery } from '../../hooks/useSearchMovie'
 import { Alert } from 'bootstrap';
 import ReactPaginate from 'react-paginate';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DropdownList from '../../common/DropdownList/DropdownList';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 
@@ -33,7 +33,12 @@ const Movies = () => {
 
   const genreNameList = genreData?.map(genre => genre.name);
 
-  console.log('genre:', genreNameList)
+  const [sortedMovies, setSortedMovies] = useState([]);
+
+  // data에 변화가 있을 때마다 sortedmovies를 최신화
+  useEffect(() => {
+    setSortedMovies(data?.results || []);
+  }, [data]);
 
   const handlePageClick = ({selected}) => {
     setPage(selected + 1)
@@ -50,30 +55,41 @@ const Movies = () => {
     )
   }
 
-  const sortBy = () => {
-    
+  const handleSort = (sortOption) => {
+    const newSortedMovies = [...sortedMovies];
+    if(sortOption.text === 'Popular'){
+      newSortedMovies.sort((a,b) => b.popularity - a.popularity);
+    } else if(sortOption.text === 'Unpopular'){
+      newSortedMovies.sort((a,b) => a.popularity - b.popularity);
+    }
+    setSortedMovies(newSortedMovies);
   }
 
+  const sortBy = () => [
+    { text: "Popular"},
+    { text: "Unpopular"}
+  ]
+
   const sortByItems = [
-    { href: sortBy, text: "Popular"},
-    { href: "#", text: "Unpopular"}
+    { text: "Popular"},
+    { text: "Unpopular"}
   ];
 
-  const byGenreItems = genreNameList?.map(genre => ({
-      href: "#", 
-      text: genre
-  }));
+  // const byGenreItems = genreNameList?.map(genre => ({
+  //     href: "#", 
+  //     text: genre
+  // }));
 
   return (
     <Container>
       <Row>
         <Col lg={4} xs={12}>
-          <DropdownList title={"Sort by"} items={sortByItems}></DropdownList>
-          <DropdownList title={"By genre"} items={byGenreItems}></DropdownList>
+          <DropdownList title={"Sort by"} items={sortByItems} onsSelectedItem={handleSort}></DropdownList>
+          {/* <DropdownList title={"By genre"} items={byGenreItems}></DropdownList> */}
         </Col>
         <Col lg={8} xs={12}>
           <Row>
-            {data?.results.map((movie,index)=>
+            {sortedMovies.map((movie,index)=>
               <Col key={index} lg={4} xs={12}>
                 <MovieCard movie={movie}/>
               </Col>)}

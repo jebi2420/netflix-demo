@@ -1,7 +1,7 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import './DropdownList.css'
 
-function DropdownList({title, items}) {
+function DropdownList({title, items, onsSelectedItem}) {
   return (
     <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -10,7 +10,12 @@ function DropdownList({title, items}) {
 
       <Dropdown.Menu>
         {items.map((item, index) => (
-          <Dropdown.Item key={index} href={item.href}>{item.text}</Dropdown.Item>
+          <Dropdown.Item 
+            key={index} 
+            href="#"
+            onClick={()=> onsSelectedItem(item)}>
+              {item.text}
+          </Dropdown.Item>
         ))}
       </Dropdown.Menu>
     </Dropdown>
