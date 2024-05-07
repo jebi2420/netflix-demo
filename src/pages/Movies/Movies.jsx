@@ -31,8 +31,6 @@ const Movies = () => {
     error: genreError
   }= useMovieGenreQuery();
 
-  const genreNameList = genreData?.map(genre => genre.name);
-
   const [sortedMovies, setSortedMovies] = useState([]);
 
   // data에 변화가 있을 때마다 sortedmovies를 최신화
