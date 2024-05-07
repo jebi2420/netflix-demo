@@ -61,31 +61,33 @@ const Movies = () => {
       newSortedMovies.sort((a,b) => b.popularity - a.popularity);
     } else if(sortOption.text === 'Unpopular'){
       newSortedMovies.sort((a,b) => a.popularity - b.popularity);
-    }
+    } 
     setSortedMovies(newSortedMovies);
   }
 
-  const sortBy = () => [
-    { text: "Popular"},
-    { text: "Unpopular"}
-  ]
+  const handleGenreSelect = (selectedGenre) => {
+    const filteredMovies = data?.results.filter(movie => 
+      movie.genre_ids.includes(selectedGenre.id));
+      setSortedMovies(filteredMovies);
+  }
+
 
   const sortByItems = [
     { text: "Popular"},
     { text: "Unpopular"}
   ];
 
-  // const byGenreItems = genreNameList?.map(genre => ({
-  //     href: "#", 
-  //     text: genre
-  // }));
+  const byGenreItems = genreData?.map(genre => ({ 
+      text: genre.name,
+      id: genre.id
+  })) || [];
 
   return (
     <Container>
       <Row>
         <Col lg={4} xs={12}>
           <DropdownList title={"Sort by"} items={sortByItems} onsSelectedItem={handleSort}></DropdownList>
-          {/* <DropdownList title={"By genre"} items={byGenreItems}></DropdownList> */}
+          <DropdownList title={"By genre"} items={byGenreItems} onsSelectedItem={handleGenreSelect}></DropdownList>
         </Col>
         <Col lg={8} xs={12}>
           <Row>
