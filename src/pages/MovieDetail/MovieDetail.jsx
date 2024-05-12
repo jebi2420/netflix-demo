@@ -101,7 +101,7 @@ const MovieDetail = () => {
           />
         </div>
         <div className="movie-caps">
-          <div className="top-facts">
+          <div className="top-facts cap-section">
             <h1>{data.title}</h1>
             <div className="main-facts">
               <div>{data.adult?<div className='adult-icon'>19</div>:<div className='adult-icon all-icon'>all</div>}</div>
@@ -112,17 +112,17 @@ const MovieDetail = () => {
               <MovieModal video={videoData}></MovieModal>
             </div>
           </div>
-          <div className="genres">
+          <div className="genres cap-section">
             <h4>Genre</h4>
             {showGenre(data.genres).map((id) =>
               (<Badge bg="danger">{id}</Badge>
             ))}
           </div>
-          <div>
+          <div className='cap-section'>
             <h4>Overview</h4>
             {data.overview}
           </div>
-          <div className="score">
+          <div className="score ">
             <h4>Score</h4>
             <div className="sub-facts">
               <div className='sub-fact'>
