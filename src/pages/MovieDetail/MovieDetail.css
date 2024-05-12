@@ -3,6 +3,7 @@
 }
 
 .sub-area{
+    position: relative;
     padding: 1em 5em;
 }
 
@@ -104,4 +105,9 @@
 
 .reco-movie-card{
     margin-right: 15px;
+}
+
+.reco-title{
+    position: absolute;
+    top: -10px;
 }

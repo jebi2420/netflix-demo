@@ -154,7 +154,7 @@ const MovieDetail = () => {
       </div>
 
       <div className='sub-area'>
-        <h1 className='section-title'>Recommendation</h1>
+        <h1 className='section-title reco-title'>Recommendation</h1>
             <div className="reco-movie-group">
               <div className="gradient-overlay"></div>
               <div className="reco-movie-scroller">
