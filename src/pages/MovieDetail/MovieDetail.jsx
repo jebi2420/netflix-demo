@@ -113,28 +113,28 @@ const MovieDetail = () => {
             </div>
           </div>
           <div className="genres">
-            <h3>Genre</h3>
+            <h4>Genre</h4>
             {showGenre(data.genres).map((id) =>
               (<Badge bg="danger">{id}</Badge>
             ))}
           </div>
           <div>
-            <h3>Overview</h3>
+            <h4>Overview</h4>
             {data.overview}
           </div>
           <div className="score">
-            <h3>Score</h3>
+            <h4>Score</h4>
             <div className="sub-facts">
               <div className='sub-fact'>
-                <h5>rating</h5>
+                <h6>rating</h6>
                 <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B"}} />
                 &nbsp;{data.vote_average.toFixed(1)}
               </div>
               <div className='sub-fact'>
-                <h5>Popularity</h5>
+                <h6>Popularity</h6>
                 <FontAwesomeIcon icon={faFire} style={{color: "#d72e14",}} />&nbsp;{data.popularity}</div>
               <div className='sub-fact'>
-                <h5>revenue</h5>
+                <h6>revenue</h6>
                 ${formatNumber(data.revenue)}
               </div>
             </div>
@@ -143,7 +143,7 @@ const MovieDetail = () => {
       </div>
 
       <div className='reviews-area sub-area'>
-        <h1 className='section-title'>Reviews</h1>
+        <h3 className='section-title'>REVIEWS</h3>
         <Row>
           {reviewData?.results?.map((result, index)=> (
               <Col lg={3} xs={12}>
@@ -154,7 +154,7 @@ const MovieDetail = () => {
       </div>
 
       <div className='sub-area'>
-        <h1 className='section-title reco-title'>Recommendation</h1>
+        <h3 className='section-title reco-title'>RECOMMENDATION</h3>
             <div className="reco-movie-group">
               <div className="gradient-overlay"></div>
               <div className="reco-movie-scroller">
