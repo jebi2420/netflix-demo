@@ -81,7 +81,7 @@ const MovieDetail = () => {
   }
 
   return (
-    <div>
+    <div className='movie-detail-container'>
       <div 
         className='movie-info'
         style={{

@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     padding: 2em 12em;
+    padding-top: 120px;
 }
 
 .movies-sorts{
@@ -70,6 +71,7 @@
     padding: 0;
     overflow: hidden;
     box-shadow: 5px 8px 32px -11px rgba(0, 0, 0, 0.815);
+    z-index: 10;
 }
 
 .genre-sort{

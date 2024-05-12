@@ -12,7 +12,7 @@ import './Homepage.css'
 
 const Homepage = () => {
   return (
-    <div>
+    <div className='home-container'>
       <Banner />
       <div className="movie-slides">
         <PopularMovieSlide />

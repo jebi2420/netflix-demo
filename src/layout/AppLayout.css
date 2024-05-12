@@ -1,5 +1,10 @@
 .navbar-primary{
+    width: 100%;
+    padding: 0.4em 4.2em;
+    position: fixed;
     background-color: black !important;
+    z-index: 100;
+    box-shadow: 12px 41px 66px -23px rgba(0,0,0,0.96);
 }
 
 .navbar-primary a, span {
