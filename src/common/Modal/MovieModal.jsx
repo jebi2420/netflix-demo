@@ -12,7 +12,6 @@ function MovieModal({video}) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log('vedio data:', video)
 
   return (
     <div className='modal-container'>

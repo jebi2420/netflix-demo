@@ -5,13 +5,15 @@ import './Banner.css'
 import MovieModal from '../../../../common/Modal/MovieModal';
 import { useMovieVideosQuery } from '../../../../hooks/useMovieVideos';
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFire } from '@fortawesome/free-solid-svg-icons';
 
 const Banner = () => {
   const navigate = useNavigate();
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   const movieId = data?.results[0]?.id;
   
-  console.log("movie", movieId)
+  console.log("movie", data)
 
 
   const {
@@ -52,14 +54,19 @@ const Banner = () => {
           `https://media.themoviedb.org/t/p/w1920_and_h800_bestv2${data?.results[0].backdrop_path}` + ")"
       }}
       className='banner'  
-      onClick={() => goToDetail(movieId)}
     >
       <div className="text-white banner-text-area">
         <div className="banner-title">
+          <h6><FontAwesomeIcon icon={faFire} style={{color: "#d72e14",}} />&nbsp;Most Popular now!</h6>
           <h1>{data?.results[0].title}</h1>
-          <MovieModal video={videoData}></MovieModal>
         </div>
-        <p>{data?.results[0].overview}</p>
+        <p className='banner-overview'>{data?.results[0].overview}</p>
+        <div className="banner-btns">
+          <div className="banner-btn"  onClick={() => goToDetail(movieId)}>More info</div>
+          <div className="banner-btn">
+            <MovieModal video={videoData}></MovieModal>
+          </div>
+        </div>
       </div>
     </div>
   )

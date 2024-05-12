@@ -29,9 +29,8 @@
     z-index: 2;
 }
 
-.banner-title{
-    display: flex;
-    align-items: center;
+.banner-title h1,h6{
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.92);
 }
 
 .movie-video-btn{
@@ -40,4 +39,40 @@
 
 .banner-text-area .btn-primary{
     white-space: nowrap;
+}
+
+.banner-overview{
+    line-height: 1.7em;
+    height: calc(1.7em * 4); /* 라인 높이 x 최대 표시할 줄 수 */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* 표시할 줄 수 */
+}
+
+.banner-btns{
+    display: flex;
+}
+
+.banner-btn{
+    white-space: nowrap;
+    display: flex;
+    padding: 10px 20px;
+    background-color: #63636373;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.banner-btn:hover{
+    background-color: rgb(134, 134, 134);
+}
+
+.banner-btn .btn-primary{
+    margin: 0;
+    z-index: 20;
+}
+
+.banner-btn .btn-primary:hover{
+    background-color: rgba(134, 134, 134, 0);
 }
