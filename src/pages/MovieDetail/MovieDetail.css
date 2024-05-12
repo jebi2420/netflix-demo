@@ -12,12 +12,12 @@
 
 .sub-area{
     position: relative;
-    padding: 1em 5em;
+    padding: 1em 12em;
 }
 
 .movie-info{
     display: flex;
-    padding: 4em 5em;
+    padding: 4em 12em;
     color: white;
     background-repeat: no-repeat;
     background-position: left calc((50vw - 170px) - 340px) top;
