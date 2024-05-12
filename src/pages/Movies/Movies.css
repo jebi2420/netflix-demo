@@ -8,3 +8,7 @@
 .movies-content{
     width: 70%;
 }
+
+.genre-button{
+    background-color: red;
+}

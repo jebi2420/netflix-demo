@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Button } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
 import MovieCard from '../../common/MovieCard/MovieCard';
 import { useSearchMovieQuery } from '../../hooks/useSearchMovie'
@@ -85,7 +85,16 @@ const Movies = () => {
     <div className='movies-container'>
         <div className='movies-sorts'>
           <DropdownList title={"Sort by"} items={sortByItems} onsSelectedItem={handleSort}></DropdownList>
-          <DropdownList title={"By genre"} items={byGenreItems} onsSelectedItem={handleGenreSelect}></DropdownList>
+          {byGenreItems.map((item, index) => (
+              <Button
+              key={index}
+              onClick={() => handleGenreSelect(item)}
+              className="genre-button"
+            >
+              {item.text}
+            </Button>
+          ))}
+          {/* <DropdownList title={"By genre"} items={byGenreItems} onsSelectedItem={handleGenreSelect}></DropdownList> */}
         </div>
           <div className="movies-content">
             <Row>
