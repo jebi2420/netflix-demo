@@ -7,7 +7,7 @@ import MovieCard from '../MovieCard/MovieCard';
 
 const MovieSlider = ({title, movies, responsive}) => {
   return (
-    <div>
+    <div className='movie-slider-container'>
         <h3>{title}</h3>
         <Carousel
             infinite={true} // 무한반복 여부

@@ -3,6 +3,11 @@
     height: 440px;
 }
 
+.movie-slider-container > h3 {
+    position: absolute;
+    margin-bottom : 0;
+}
+
 @media (max-width: 480px){
     .carousel-container{
         height: 330px;
