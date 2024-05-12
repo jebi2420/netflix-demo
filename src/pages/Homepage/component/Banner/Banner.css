@@ -43,11 +43,11 @@
 
 .banner-overview{
     line-height: 1.7em;
-    height: calc(1.7em * 4); /* 라인 높이 x 최대 표시할 줄 수 */
+    height: calc(1.7em * 3); /* 라인 높이 x 최대 표시할 줄 수 */
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4; /* 표시할 줄 수 */
+    -webkit-line-clamp: 3; /* 표시할 줄 수 */
 }
 
 .banner-btns{
