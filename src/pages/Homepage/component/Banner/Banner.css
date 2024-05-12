@@ -27,3 +27,9 @@
 .banner-text-area > * { 
     z-index: 2;
 }
+
+.banner-title{
+    display: flex;
+    align-items: center;
+}
+

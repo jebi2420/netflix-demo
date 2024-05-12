@@ -20,7 +20,6 @@ const MovieCard = ({movie}) => {
     return genreNameList;
   }
 
-  console.log(movie)
 
   const goToDetail = (id) => {
     // 현재 경로 확인

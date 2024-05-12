@@ -3,7 +3,7 @@ import YouTube from 'react-youtube';
 
 function MovieVideo({video}) {
     // 'type'이 'Trailer'인 항목들만 필터링
-    const teaserVideos = video.results?.filter(item => item.type === "Trailer");
+    const teaserVideos = video?.results?.filter(item => item.type === "Trailer");
 
     // 필터링된 결과에서 첫 번째 항목의 'key' 추출
     const videoId = teaserVideos?.[0]?.key;
