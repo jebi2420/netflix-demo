@@ -8,6 +8,7 @@ import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from 'react';
 import DropdownList from '../../common/DropdownList/DropdownList';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
+import './Movies.css'
 
 // Movies 페이지로 올 수 있는 2가지 경로
 // 1. navbar에서 클릭해서 온 경우 => popularMovie 보여주기
@@ -81,43 +82,41 @@ const Movies = () => {
   })) || [];
 
   return (
-    <Container>
-      <Row>
-        <Col lg={4} xs={12}>
+    <div className='movies-container'>
+        <div className='movies-sorts'>
           <DropdownList title={"Sort by"} items={sortByItems} onsSelectedItem={handleSort}></DropdownList>
           <DropdownList title={"By genre"} items={byGenreItems} onsSelectedItem={handleGenreSelect}></DropdownList>
-        </Col>
-        <Col lg={8} xs={12}>
-          <Row>
-            {sortedMovies.map((movie,index)=>
-              <Col key={index} lg={4} xs={12}>
-                <MovieCard movie={movie}/>
-              </Col>)}
-          </Row>
-          <ReactPaginate
-            nextLabel="next >"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={3}
-            marginPagesDisplayed={2}
-            pageCount={data?.total_pages}//전체 페이지가 몇개인지
-            previousLabel="< previous"
-            pageClassName="page-item"
-            pageLinkClassName="page-link"
-            previousClassName="page-item"
-            previousLinkClassName="page-link"
-            nextClassName="page-item"
-            nextLinkClassName="page-link"
-            breakLabel="..."
-            breakClassName="page-item"
-            breakLinkClassName="page-link"
-            containerClassName="pagination"
-            activeClassName="active"
-            renderOnZeroPageCount={null}
-            forcePage={page-1} // 현재 페이지(내가 선택한 페이지)
-          />
-        </Col>
-      </Row>
-    </Container>
+        </div>
+          <div className="movies-content">
+            <Row>
+              {sortedMovies.map((movie,index)=>
+                <Col key={index} lg={3} xs={12}>
+                  <MovieCard movie={movie}/>
+                </Col>)}
+            </Row>
+            <ReactPaginate
+              nextLabel="next >"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={2}
+              pageCount={data?.total_pages}//전체 페이지가 몇개인지
+              previousLabel="< previous"
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              previousClassName="page-item"
+              previousLinkClassName="page-link"
+              nextClassName="page-item"
+              nextLinkClassName="page-link"
+              breakLabel="..."
+              breakClassName="page-item"
+              breakLinkClassName="page-link"
+              containerClassName="pagination"
+              activeClassName="active"
+              renderOnZeroPageCount={null}
+              forcePage={page-1} // 현재 페이지(내가 선택한 페이지)
+            />
+          </div>
+    </div>
   )
 }
 
