@@ -57,7 +57,7 @@ const Banner = () => {
       <div className="text-white banner-text-area">
         <div className="banner-title">
           <h1>{data?.results[0].title}</h1>
-          <MovieModal className='movie-video-btn' video={videoData}></MovieModal>
+          <MovieModal video={videoData}></MovieModal>
         </div>
         <p>{data?.results[0].overview}</p>
       </div>

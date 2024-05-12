@@ -34,3 +34,10 @@
     align-items: center;
 }
 
+.movie-video-btn{
+    white-space: nowrap;
+}
+
+.banner-text-area .btn-primary{
+    white-space: nowrap;
+}
