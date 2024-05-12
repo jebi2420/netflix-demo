@@ -38,7 +38,6 @@ const MovieDetail = () => {
     error: videoError
   } = useMovieVideosQuery({movieId});
 
-  console.log('reco: ', recoData)
 
   const {data:genreData} = useMovieGenreQuery();
   const showGenre = (genres) => {

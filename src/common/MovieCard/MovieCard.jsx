@@ -42,18 +42,26 @@ const MovieCard = ({movie}) => {
       className="movie-card"
     >
       <div className="overlay" onClick={() => goToDetail(movie.id)}>
-        <h1>{movie.title}</h1>
-        {showGenre(movie.genre_ids).map((id) =>
-          (<Badge bg="danger">{id}</Badge>
-        ))}
-        <div className="card-info-box">
-          <div><FontAwesomeIcon icon={faFire} style={{color: "#d72e14",}} />{movie.popularity}</div>
-          <div>
-            <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B"}} />
-            {movie.vote_average.toFixed(1)}
-          </div>
-          <div>{movie.adult?<div className='adult-icon'>19</div>:<div className='adult-icon all-icon'>all</div>}</div>
+        <div className='title-area' >
+          <h1>{movie.title}</h1>
         </div>
+          <div className="movie-card-info">{movie.adult?<div className='adult-icon'>19</div>:<div className='adult-icon all-icon'>all</div>}</div>
+        <div className="card-info-box">
+          <div className="movie-card-info">
+            <FontAwesomeIcon icon={faFire} style={{color: "#d72e14",}} />
+            &nbsp;{movie.popularity}
+          </div>
+          <div className="movie-card-info">
+            <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B"}} />
+            &nbsp;{movie.vote_average.toFixed(1)}
+          </div>
+        </div>
+        <div className="movie-card-info">
+          {showGenre(movie.genre_ids).map((id) =>
+            (<Badge bg="danger">{id}</Badge>
+            ))}
+        </div>
+  
       </div>
     </div>
   )

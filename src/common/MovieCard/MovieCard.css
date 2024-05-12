@@ -34,5 +34,13 @@
 
 .badge{
     margin-right: 3px;
-    margin-bottom: 10px;
+}
+
+.card-info-box{
+    display: flex;
+}
+
+.movie-card-info{
+    margin-bottom: 5px;
+    margin-right: 7px;
 }
