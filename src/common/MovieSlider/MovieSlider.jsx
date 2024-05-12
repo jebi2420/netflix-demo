@@ -17,7 +17,7 @@ const MovieSlider = ({title, movies, responsive}) => {
             responsive={responsive} // responsive 설정을 해야 화면에 따른 크기 설정 가능
             >
             {movies.map((movie,index)=><MovieCard movie={movie} key={index}/>)}
-        </Carousel>;     
+        </Carousel>
     </div>
   )
 }
