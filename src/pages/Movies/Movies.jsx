@@ -84,16 +84,21 @@ const Movies = () => {
   return (
     <div className='movies-container'>
         <div className='movies-sorts'>
-          <DropdownList title={"Sort by"} items={sortByItems} onsSelectedItem={handleSort}></DropdownList>
-          {byGenreItems.map((item, index) => (
-              <Button
-              key={index}
-              onClick={() => handleGenreSelect(item)}
-              className="genre-button"
-            >
-              {item.text}
-            </Button>
-          ))}
+          <div className="popular-sort">
+            <DropdownList title={"Sort by"} items={sortByItems} onsSelectedItem={handleSort}></DropdownList>
+          </div>
+          <div className="genre-sort">
+            <h5>Genre</h5>
+            {byGenreItems.map((item, index) => (
+                <Button
+                key={index}
+                onClick={() => handleGenreSelect(item)}
+                className="genre-button"
+              >
+                {item.text}
+              </Button>
+            ))}
+          </div>
           {/* <DropdownList title={"By genre"} items={byGenreItems} onsSelectedItem={handleGenreSelect}></DropdownList> */}
         </div>
           <div className="movies-content">
