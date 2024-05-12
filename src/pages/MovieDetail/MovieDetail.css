@@ -111,3 +111,11 @@
     position: absolute;
     top: -10px;
 }
+
+.reco-movie-scroller {
+    /* 수평 스크롤바 너비 */
+    scrollbar-width: thin;
+    /* 수평 스크롤바 색상 */
+    scrollbar-color: rgba(139, 43, 43, 0.904) #f1f1f100;
+  }
+  
