@@ -7,8 +7,11 @@ import { useMovieVideosQuery } from '../../../../hooks/useMovieVideos';
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFire } from '@fortawesome/free-solid-svg-icons';
+import ClipLoader from "react-spinners/ClipLoader";
+import { useState } from 'react';
 
 const Banner = () => {
+  const [loading, setLoading] = useState(true)
   const navigate = useNavigate();
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   const movieId = data?.results[0]?.id;
@@ -24,9 +27,15 @@ const Banner = () => {
   } = useMovieVideosQuery({movieId});
 
   if(isLoading){
-    return (
-      <h1>Loading...</h1>
-    )
+      return (
+        <ClipLoader
+          color= '#c94646'
+          loading={loading}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      )
   }
   if(isError){
     return(

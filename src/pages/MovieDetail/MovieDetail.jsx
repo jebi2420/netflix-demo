@@ -15,9 +15,11 @@ import MovieCard from '../../common/MovieCard/MovieCard';
 import { useState } from 'react';
 import MovieModal from '../../common/Modal/MovieModal';
 import { useMovieVideosQuery } from '../../hooks/useMovieVideos';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
+  const [loading, setLoading] = useState(true)
   const { data, isLoading, isError, error } = useDetailMovieQuery({movieId});
   const { 
     data:reviewData, 
@@ -71,7 +73,13 @@ const MovieDetail = () => {
   
   if(isLoading){
     return (
-      <h1>Loading...</h1>
+      <ClipLoader
+        color= '#c94646'
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
     )
   }
   if(isError){
