@@ -138,6 +138,23 @@
       display: none;
   }
 
+  .no-reviews{
+    border: 1px solid rgb(70, 70, 70);
+    background-color: rgba(209, 209, 209, 0.185);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .no-reco{
+    width: 220px;
+    height: 330px;
+    background-size: cover;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 7px;
+  }
+
   @media screen and (max-width: 48rem){
     .movie-info{
         padding: 3em 2em;
