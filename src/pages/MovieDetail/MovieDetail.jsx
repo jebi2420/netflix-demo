@@ -6,7 +6,8 @@ import { Badge } from 'react-bootstrap'
 import './MovieDetail.css'
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faFire } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faFire} from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { useReviewsQuery } from '../../hooks/useReviews';
 import { Row, Col } from 'react-bootstrap';
 import MovieReviews from './MovieReviews/MovieReviews';
@@ -148,7 +149,7 @@ const MovieDetail = () => {
       </div>
 
       <div className='reviews-area sub-area'>
-      {reviewData?.results?.length > 0 && (
+      {reviewData?.results?.length > 0 ? (
         <>
           <h3 className='section-title'>REVIEWS&nbsp;({reviewData?.results?.length})</h3>
           <Row>
@@ -160,11 +161,17 @@ const MovieDetail = () => {
           </Row>
             <div className="row-overlay"></div>
         </>
+      ) : (
+        <div className="no-data">
+          <FontAwesomeIcon icon={faCircleXmark} />
+          <h5>There aren't any reviews for this movie yet!</h5>
+          <p>Please check again later</p>
+        </div>
       )}
       </div>
 
       <div className='reco-area sub-area'>
-          {recoData?.results?.length > 0 && (
+          {recoData?.results?.length > 0 ? (
         <>
           <h3 className='section-title reco-title'>RECOMMENDATION&nbsp;({recoData?.results?.length})</h3>
           <div className="reco-movie-group">
@@ -178,6 +185,12 @@ const MovieDetail = () => {
             </div>
           </div>
         </>
+      ) : (
+        <div className="no-data">
+          <FontAwesomeIcon icon={faCircleXmark} />
+          <h5>There aren't any recommendation for this movie yet!</h5>
+          <p>Please check again later</p>
+        </div>
       )}
       </div>
     </div>
