@@ -126,4 +126,25 @@
     /* 수평 스크롤바 색상 */
     scrollbar-color: rgba(139, 43, 43, 0.904) #f1f1f100;
   }
-  
+
+  @media screen and (max-width: 48rem){
+    .movie-info{
+        padding: 4em 2em;
+        flex-flow: column;
+        background: black;
+    }
+
+    .movie-poster{
+        margin-right: 0;
+        
+    }
+
+    .sub-fact h6{
+        display: none;
+    }
+
+    .sub-area {
+        padding: 1em 2em ;
+    }
+
+  }
