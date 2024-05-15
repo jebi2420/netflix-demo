@@ -143,7 +143,7 @@
 @media screen and (max-width: 48rem){
     .movies-container {
         flex-flow: column;
-        padding: 2em 1.5em;
+        padding: 5em 1.5em;
     }
 
     .row{
@@ -157,5 +157,33 @@
     .movies-content .movie-card {
         width: 6.5em;
         height: 9.8em;
+    }
+
+    .pagination{
+        --bs-pagination-font-size: 0.8rem;
+    }
+
+    .movies-sorts {
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
+    .genre-btns{
+        width: 100%;
+        display: flex;
+        overflow: auto;
+        padding-bottom: 10px;
+    }
+
+    .genre-sort{
+        position: relative;
+    }
+
+    .genre-sort::before {
+        content: '';
+        background: linear-gradient(to left, black, transparent);
+        position: absolute;
+        right: 19px;
+        height: 65%;
+        width: 13%;
     }
 }

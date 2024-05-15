@@ -91,15 +91,17 @@ const Movies = () => {
           </div>
           <div className="genre-sort">
             <h5>Genre</h5>
-            {byGenreItems.map((item, index) => (
-                <Button
-                key={index}
-                onClick={() => handleGenreSelect(item)}
-                className="genre-button"
-              >
-                {item.text}
-              </Button>
-            ))}
+            <div className="genre-btns">
+              {byGenreItems.map((item, index) => (
+                  <Button
+                  key={index}
+                  onClick={() => handleGenreSelect(item)}
+                  className="genre-button"
+                >
+                  {item.text}
+                </Button>
+              ))}
+            </div>
           </div>
           {/* <DropdownList title={"By genre"} items={byGenreItems} onsSelectedItem={handleGenreSelect}></DropdownList> */}
         </div>
