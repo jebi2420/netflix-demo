@@ -81,6 +81,14 @@
     display: none;
 }
 
+.reviews-area .row{
+    position: relative;
+    width: auto;
+    height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
 @media screen and (max-width: 48rem){
     .movie-content-area{
         display: none;
@@ -119,6 +127,6 @@
     }
 
     .reviews-area .row{
-        width: auto;
+        height: 200px;
     }
 }

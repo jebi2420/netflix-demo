@@ -150,7 +150,7 @@ const MovieDetail = () => {
       <div className='reviews-area sub-area'>
       {reviewData?.results?.length > 0 && (
         <>
-          <h3 className='section-title'>REVIEWS</h3>
+          <h3 className='section-title'>REVIEWS&nbsp;({reviewData?.results?.length})</h3>
           <Row>
             {reviewData.results.map((result, index) => (
               <Col lg={3} xs={12} key={index}>
@@ -158,6 +158,7 @@ const MovieDetail = () => {
               </Col>
             ))}
           </Row>
+            <div className="row-overlay"></div>
         </>
       )}
       </div>
@@ -165,7 +166,7 @@ const MovieDetail = () => {
       <div className='reco-area sub-area'>
           {recoData?.results?.length > 0 && (
         <>
-          <h3 className='section-title reco-title'>RECOMMENDATION</h3>
+          <h3 className='section-title reco-title'>RECOMMENDATION&nbsp;({recoData?.results?.length})</h3>
           <div className="reco-movie-group">
             <div className="gradient-overlay"></div>
             <div className="reco-movie-scroller">
