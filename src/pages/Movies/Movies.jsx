@@ -112,12 +112,12 @@ const Movies = () => {
                   </Col>)}
               </Row>
             <ReactPaginate
-              nextLabel="next >"
+              nextLabel=">"
               onPageChange={handlePageClick}
               pageRangeDisplayed={3}
-              marginPagesDisplayed={2}
+              marginPagesDisplayed={1}
               pageCount={data?.total_pages}//전체 페이지가 몇개인지
-              previousLabel="< previous"
+              previousLabel="<"
               pageClassName="page-item"
               pageLinkClassName="page-link"
               previousClassName="page-item"

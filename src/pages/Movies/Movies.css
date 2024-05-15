@@ -186,4 +186,8 @@
         height: 65%;
         width: 13%;
     }
+
+    .movies-content .pagination{
+        z-index: 1;
+    }
 }
