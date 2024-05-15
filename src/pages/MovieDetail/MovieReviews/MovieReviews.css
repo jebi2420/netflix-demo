@@ -117,4 +117,8 @@
         margin-top: 0;
         font-size: 0.9em;
     }
+
+    .reviews-area .row{
+        width: auto;
+    }
 }

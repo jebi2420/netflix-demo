@@ -148,33 +148,36 @@ const MovieDetail = () => {
       </div>
 
       <div className='reviews-area sub-area'>
-        
-        <Row>
-          {reviewData?.results?.length > 0 ? (
-            <h3 className='section-title'>REVIEWS</h3>
-            (reviewData?.results?.map((result, index)=> (
-              <Col lg={3} xs={12}>
-                <MovieReviews result={result} key={index}></MovieReviews>
+      {reviewData?.results?.length > 0 && (
+        <>
+          <h3 className='section-title'>REVIEWS</h3>
+          <Row>
+            {reviewData.results.map((result, index) => (
+              <Col lg={3} xs={12} key={index}>
+                <MovieReviews result={result} />
               </Col>
-            ))
-          )) :  (
-            <div></div>
-          )}
-        </Row>
+            ))}
+          </Row>
+        </>
+      )}
       </div>
 
       <div className='reco-area sub-area'>
-        <h3 className='section-title reco-title'>RECOMMENDATION</h3>
-            <div className="reco-movie-group">
-              <div className="gradient-overlay"></div>
-              <div className="reco-movie-scroller">
-                {recoData?.results?.map((movie, index)=> (
-                      <div className='reco-movie-card'>
-                        <MovieCard movie={movie} key={index}></MovieCard>
-                      </div>
-                ))}
-              </div>
+          {recoData?.results?.length > 0 && (
+        <>
+          <h3 className='section-title reco-title'>RECOMMENDATION</h3>
+          <div className="reco-movie-group">
+            <div className="gradient-overlay"></div>
+            <div className="reco-movie-scroller">
+              {recoData.results.map((movie, index) => (
+                <div className='reco-movie-card' key={index}>
+                  <MovieCard movie={movie} />
+                </div>
+              ))}
             </div>
+          </div>
+        </>
+      )}
       </div>
     </div>
   )
