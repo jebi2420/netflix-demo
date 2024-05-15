@@ -21,7 +21,6 @@ import LoadingSpinner from '../../common/Spinner/Spinner';
 // page 값이 바뀔때마다 useSearchMovie에 page까지 넣어서 fetch
 
 const Movies = () => {
-  const [loading, setLoading] = useState(true)
   const [query, setQuery] = useSearchParams();
   const [page,setPage] = useState(1);
   const keyword = query.get("q") // url에서 q값을 읽어옴
@@ -47,7 +46,7 @@ const Movies = () => {
 
   if(isLoading){
     return (
-      <LoadingSpinner loading={loading}></LoadingSpinner>
+      <LoadingSpinner loading={true}></LoadingSpinner>
     )
   }
   if(isError){

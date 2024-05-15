@@ -19,7 +19,6 @@ import LoadingSpinner from '../../common/Spinner/Spinner';
 
 const MovieDetail = () => {
   const {id: movieId} = useParams();
-  const [loading, setLoading] = useState(true)
   const { data, isLoading, isError, error } = useDetailMovieQuery({movieId});
   const { 
     data:reviewData, 
@@ -73,7 +72,7 @@ const MovieDetail = () => {
   
   if(isLoading){
     return (
-      <LoadingSpinner loading={loading}></LoadingSpinner>
+      <LoadingSpinner loading={true}></LoadingSpinner>
     )
   }
   if(isError){
@@ -151,11 +150,14 @@ const MovieDetail = () => {
       <div className='reviews-area sub-area'>
         <h3 className='section-title'>REVIEWS</h3>
         <Row>
-          {reviewData?.results?.map((result, index)=> (
+          {reviewData?.results?.length > 0 ? (reviewData?.results?.map((result, index)=> (
               <Col lg={3} xs={12}>
                 <MovieReviews result={result} key={index}></MovieReviews>
               </Col>
-          ))}
+            ))
+          ) :  (
+            <div>No reviews available</div>
+          )}
         </Row>
       </div>
 

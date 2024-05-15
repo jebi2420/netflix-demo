@@ -11,7 +11,6 @@ import { useEffect, useState } from 'react';
 import LoadingSpinner from '../../../../common/Spinner/Spinner';
 
 const Banner = () => {
-  const [loading, setLoading] = useState(true)
   const navigate = useNavigate();
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   const movieId = data?.results[0]?.id;
@@ -48,7 +47,7 @@ const Banner = () => {
 
   if(isLoading || isVideoLoading){
       return (
-        <LoadingSpinner loading={loading}></LoadingSpinner>
+        <LoadingSpinner loading={true}></LoadingSpinner>
 
       )
   }
