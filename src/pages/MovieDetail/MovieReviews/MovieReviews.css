@@ -76,3 +76,45 @@
     text-decoration: underline;
     font-size: 18px;
 }
+
+.movie-content-area-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 48rem){
+    .movie-content-area{
+        display: none;
+    }
+    .user-review{
+        padding: 15px;
+    }
+
+    .user-profile h5{
+        font-size: 1rem;
+    }
+
+    .user-info{
+        margin-bottom: 0.3em;
+    }
+
+    .star-icon{
+        padding: 5px 10px;
+        font-size: 0.6em;
+    }
+
+    .movie-content-area-mobile{
+        display: block;
+    }
+
+    .movie-content-area-mobile .movie-content{
+        line-height: 1.6em;
+        font-size: 0.8em;
+        -webkit-line-clamp: 2;
+        padding-left: 30px;
+    }
+
+    .read-more-btn{
+        margin-top: 0;
+        font-size: 0.9em;
+    }
+}

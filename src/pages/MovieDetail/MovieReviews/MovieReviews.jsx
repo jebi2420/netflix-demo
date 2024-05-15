@@ -35,6 +35,20 @@ const MovieReviews = ({result}) => {
                 </div>
                 <button className='read-more-btn' onClick={toggleExpand}>{isExpanded ? 'less' : 'read more'}</button>
             </div>
+
+            <div className='movie-content-area-mobile'>
+                <div 
+                    className='movie-content'
+                    style={{
+                        height: isExpanded ? 'auto' : 'calc(1.6em * 2)',
+                        overflow: isExpanded ? 'visible' : 'hidden',
+                        display: isExpanded ? 'inline-block' : '-webkit-box'
+                    }}
+                >
+                    {result.content}
+                </div>
+                <button className='read-more-btn' onClick={toggleExpand}>{isExpanded ? 'less' : 'read more'}</button>
+            </div>
         </div>
     </div>
   )
