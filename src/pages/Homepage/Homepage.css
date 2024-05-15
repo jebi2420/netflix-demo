@@ -5,3 +5,9 @@
 .movie-slides{
     padding: 1em 5em;
 }
+
+@media screen and (max-width: 48rem){
+    .movie-slides{
+        padding: 1em 2em;
+    }
+}

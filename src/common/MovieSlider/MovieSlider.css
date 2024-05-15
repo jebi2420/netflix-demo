@@ -10,8 +10,15 @@
 
 @media (max-width: 480px){
     .carousel-container{
-        height: 330px;
+        height: 179px;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 3em;
+    }
+
+    .movie-slider-container > h3 {
+        font-size: 1.3em;
+        position: inherit;
+        margin-bottom : 10px;
     }
 }
