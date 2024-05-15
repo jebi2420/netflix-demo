@@ -104,12 +104,12 @@ const Movies = () => {
           {/* <DropdownList title={"By genre"} items={byGenreItems} onsSelectedItem={handleGenreSelect}></DropdownList> */}
         </div>
           <div className="movies-content">
-            <Row>
-              {sortedMovies.map((movie,index)=>
-                <Col key={index} lg={3} xs={12}>
-                  <MovieCard movie={movie}/>
-                </Col>)}
-            </Row>
+              <Row>
+                {sortedMovies.map((movie,index)=>
+                  <Col key={index} lg={3} xs={4}>
+                    <MovieCard movie={movie}/>
+                  </Col>)}
+              </Row>
             <ReactPaginate
               nextLabel="next >"
               onPageChange={handlePageClick}

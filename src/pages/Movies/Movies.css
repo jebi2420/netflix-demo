@@ -139,3 +139,23 @@
 .disabled>.page-link, .page-link.disabled{
     display: none;
 }
+
+@media screen and (max-width: 48rem){
+    .movies-container {
+        flex-flow: column;
+        padding: 2em 1.5em;
+    }
+
+    .row{
+        width: fit-content;
+    }
+
+    .movies-content {
+        width: 100%;
+    }
+
+    .movies-content .movie-card {
+        width: 6.5em;
+        height: 9.8em;
+    }
+}

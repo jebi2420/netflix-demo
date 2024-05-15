@@ -9,6 +9,6 @@
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1.7
+      items: 1.5
     }
   };
