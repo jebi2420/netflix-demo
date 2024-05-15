@@ -51,9 +51,14 @@
     .movie-card {
         width: 122px;
         height: 179px;
+        margin: 10px 0;
     }
 
     .overlay:hover{
         opacity: 0;
+    }
+
+    .movie-card:hover{
+        transform: none;
     }
 }
