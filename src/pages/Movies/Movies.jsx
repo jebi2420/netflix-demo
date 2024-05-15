@@ -10,6 +10,8 @@ import DropdownList from '../../common/DropdownList/DropdownList';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import './Movies.css'
 import LoadingSpinner from '../../common/Spinner/Spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 
 // Movies 페이지로 올 수 있는 2가지 경로
 // 1. navbar에서 클릭해서 온 경우 => popularMovie 보여주기
@@ -104,35 +106,48 @@ const Movies = () => {
           </div>
           {/* <DropdownList title={"By genre"} items={byGenreItems} onsSelectedItem={handleGenreSelect}></DropdownList> */}
         </div>
-          <div className="movies-content">
+        <div className="movies-content">
+          {sortedMovies?.length > 0 && (
+            <>
               <Row>
-                {sortedMovies.map((movie,index)=>
+                {sortedMovies.map((movie, index) => (
                   <Col key={index} lg={3} xs={4}>
-                    <MovieCard movie={movie}/>
-                  </Col>)}
+                    <MovieCard movie={movie} />
+                  </Col>
+                ))}
               </Row>
-            <ReactPaginate
-              nextLabel=">"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={3}
-              marginPagesDisplayed={1}
-              pageCount={data?.total_pages}//전체 페이지가 몇개인지
-              previousLabel="<"
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              previousClassName="page-item"
-              previousLinkClassName="page-link"
-              nextClassName="page-item"
-              nextLinkClassName="page-link"
-              breakLabel="..."
-              breakClassName="page-item"
-              breakLinkClassName="page-link"
-              containerClassName="pagination"
-              activeClassName="active"
-              renderOnZeroPageCount={null}
-              forcePage={page-1} // 현재 페이지(내가 선택한 페이지)
-            />
-          </div>
+              <ReactPaginate
+                nextLabel=">"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={3}
+                marginPagesDisplayed={1}
+                pageCount={data?.total_pages} // 전체 페이지가 몇개인지
+                previousLabel="<"
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                containerClassName="pagination"
+                activeClassName="active"
+                renderOnZeroPageCount={null}
+                forcePage={page - 1} // 현재 페이지(내가 선택한 페이지)
+              />
+            </>
+          )}
+          {sortedMovies?.length === 0 && (
+            <div className="no-data">
+              <FontAwesomeIcon icon={faCircleXmark} />
+              <h5>No search results</h5>
+              <p>Try another way</p>
+            </div>
+          )}
+        </div>
+
     </div>
   )
 }
