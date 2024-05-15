@@ -28,7 +28,7 @@ const AppLayout = () => {
                 <img                     
                     src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" 
                     alt="" 
-                    style={{ width: '8rem' }}
+                    style={{ width: '7rem' }}
                 />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
