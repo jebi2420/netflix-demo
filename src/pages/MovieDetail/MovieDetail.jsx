@@ -94,6 +94,7 @@ const MovieDetail = () => {
       }} 
       >
         <div className='movie-poster'>
+          <div className="poster-overlay"></div>
           <img 
             style={{
               width: "100%",
@@ -106,11 +107,13 @@ const MovieDetail = () => {
           <div className="top-facts cap-section">
             <h1>{data.title}</h1>
             <div className="main-facts">
-              <div>{data.adult?<div className='adult-icon'>19</div>:<div className='adult-icon all-icon'>all</div>}</div>
-              <div className="dot"></div>
-              <div>{data.release_date}</div>
-              <div className="dot"></div>
-              <div>{data.runtime} min</div>
+              <div className="main-fact-left">
+                <div>{data.adult?<div className='adult-icon'>19</div>:<div className='adult-icon all-icon'>all</div>}</div>
+                <div className="dot"></div>
+                <div>{data.release_date}</div>
+                <div className="dot"></div>
+                <div>{data.runtime} min</div>
+              </div>
               <MovieModal video={videoData}></MovieModal>
             </div>
           </div>
@@ -122,7 +125,7 @@ const MovieDetail = () => {
           </div>
           <div className='cap-section'>
             <h4>Overview</h4>
-            {data.overview}
+            <div className="overview-pc">{data.overview}</div>
           </div>
           <div className="score ">
             <h4>Score</h4>
@@ -141,6 +144,7 @@ const MovieDetail = () => {
               </div>
             </div>
           </div>
+          <div className="overview-mobile">{data.overview}</div>
         </div>
       </div>
 

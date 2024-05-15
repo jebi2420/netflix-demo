@@ -32,6 +32,7 @@
     margin-right: 3em;
     border-radius: 5px;
     border: 0.8px solid rgba(182, 182, 182, 0.356);
+    overflow: hidden;
 }
 
 .adult-icon{
@@ -56,6 +57,11 @@
 }
 
 .main-facts{
+    display: flex;
+    align-items: center;
+}
+
+.main-fact-left{
     display: flex;
     align-items: center;
 }
@@ -127,16 +133,72 @@
     scrollbar-color: rgba(139, 43, 43, 0.904) #f1f1f100;
   }
 
+  .overview-mobile{
+      display: none;
+  }
+
   @media screen and (max-width: 48rem){
     .movie-info{
-        padding: 4em 2em;
+        padding: 3em 2em;
         flex-flow: column;
-        background: black;
+        background-image: none !important;
+        align-items: center;
+    }
+
+    .movie-info img{
+        width: 100%;
     }
 
     .movie-poster{
         margin-right: 0;
-        
+        width: 50%;
+        min-width: 50%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    /* .poster-overlay{
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(to top, black 40%, transparent);
+    } */
+
+    .movie-caps{
+        font-size: 0.8em;
+    }
+
+    .movie-caps h1{
+        font-size: 1.6em;
+        margin: 1em 0;
+        /* text-align: center; */
+    }
+
+    .movie-caps h4{
+        display: none;
+    }
+    .main-facts{
+        justify-content: space-between;
+    }
+
+    .movie-caps .btn-primary{
+        font-size: 0.8em;
+        background-color: rgb(128 128 128 / 42%);
+    }
+
+    /* .genres{
+        justify-content: center;
+    }
+
+    .sub-facts{
+        justify-content: center;
+    } */
+
+    .sub-fact{
+        padding: 0;
+        background-color: rgba(255, 0, 0, 0);
     }
 
     .sub-fact h6{
@@ -147,4 +209,18 @@
         padding: 1em 2em ;
     }
 
-  }
+    .cap-section {
+        margin-bottom: 0.8em;
+    }
+
+    .overview-mobile{
+        display: block;
+        margin-top: 1.5em;
+        padding-top: 0.8em;
+        border-top: 0.3px solid #ffffff8c;
+    }
+
+    .overview-pc{
+        display: none;
+    }
+}
