@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import DropdownList from '../../common/DropdownList/DropdownList';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import './Movies.css'
+import LoadingSpinner from '../../common/Spinner/Spinner';
 
 // Movies 페이지로 올 수 있는 2가지 경로
 // 1. navbar에서 클릭해서 온 경우 => popularMovie 보여주기
@@ -20,6 +21,7 @@ import './Movies.css'
 // page 값이 바뀔때마다 useSearchMovie에 page까지 넣어서 fetch
 
 const Movies = () => {
+  const [loading, setLoading] = useState(true)
   const [query, setQuery] = useSearchParams();
   const [page,setPage] = useState(1);
   const keyword = query.get("q") // url에서 q값을 읽어옴
@@ -45,7 +47,7 @@ const Movies = () => {
 
   if(isLoading){
     return (
-      <h1>Loading...</h1>
+      <LoadingSpinner loading={loading}></LoadingSpinner>
     )
   }
   if(isError){

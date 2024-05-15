@@ -7,8 +7,8 @@ import { useMovieVideosQuery } from '../../../../hooks/useMovieVideos';
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFire } from '@fortawesome/free-solid-svg-icons';
-import ClipLoader from "react-spinners/ClipLoader";
 import { useState } from 'react';
+import LoadingSpinner from '../../../../common/Spinner/Spinner';
 
 const Banner = () => {
   const [loading, setLoading] = useState(true)
@@ -16,8 +16,6 @@ const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   const movieId = data?.results[0]?.id;
   
-  console.log("movie", data)
-
 
   const {
     data:videoData,
@@ -26,23 +24,23 @@ const Banner = () => {
     error: videoError
   } = useMovieVideosQuery({movieId});
 
-  if(isLoading){
+  if(isLoading || isVideoLoading){
       return (
-        <ClipLoader
-          color= '#c94646'
-          loading={loading}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
+        <LoadingSpinner loading={loading}></LoadingSpinner>
+
       )
   }
   if(isError){
     return(
       <Alert variant='danger'>{error.message}</Alert>
     )
-  }
+  }if (isVideoError) {
+    return(
+      <Alert variant='danger'>{videoError.message}</Alert>
+    )
+  } 
 
+    
   const goToDetail = (id) => {
     // 현재 경로 확인
     const currentPath = window.location.pathname;
